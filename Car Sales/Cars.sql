@@ -77,9 +77,6 @@ ON CI.Vin = CSI.Vin
 WHERE CI.Make IS NOT NULL AND
 	 CSI.SellingPrice IS NOT NULL AND 
 	 Model IS NOT NULL
-GROUP BY CI.Make, 
-	CSI.SellingPrice, 
-	Model
 ORDER BY AvgPriceByMake DESC, 
 	HighestPriceByMake DESC,
 	LowestPriceByMake DESC
