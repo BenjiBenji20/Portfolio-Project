@@ -109,7 +109,7 @@ SET StateOfOwner = PARSENAME(REPLACE(OwnerAddress, ',', '.'), 1)
 
 
 /**  Update SoldAsVacant column where N = No and Y = Yes*/
-SELECT DISTINCT 
+SELECT DISTINCT -- Checks the number of diff. response
 	SoldAsVacant,
 	COUNT(SoldASVacant) AS NoOfDistinctResponse
 FROM NashvilleHousing..NashvilleHousingDB
@@ -119,14 +119,6 @@ ORDER BY
 	SoldAsVacant DESC
 
 -- Updating using case statement
-SELECT
-	CASE
-		WHEN SoldAsVacant = 'Y' THEN 'Yes'
-		WHEN SoldAsVacant = 'N' THEN 'No'
-		ELSE SoldAsVacant
-	END AS SoldAsVacantUpdated
-FROM NashvilleHousing..NashvilleHousingDB
-
 UPDATE NashvilleHousing..NashvilleHousingDB
 SET SoldAsVacant = CASE
 		WHEN SoldAsVacant = 'Y' THEN 'Yes'
