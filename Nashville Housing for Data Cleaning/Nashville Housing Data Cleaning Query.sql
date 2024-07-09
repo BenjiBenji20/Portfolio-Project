@@ -1,7 +1,7 @@
 /** This query is for data cleaning.
 */
 
-USE NashvilleHousing..NashvilleHousingDB;
+USE NashvilleHousing;
 GO
 
 
